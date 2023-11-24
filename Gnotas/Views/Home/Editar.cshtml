@@ -1,0 +1,35 @@
+﻿@model Gnotas.Models.NotaModel
+
+<h2>EDITAR</h2>
+
+<div>
+
+    <form asp-action="Editar">
+
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div class="form-group">
+
+            <label asp-for="Titulo">Titulo</label><br />
+            <input class="form-control" placeholder="Titulo da nota" asp-for="Titulo" /><br />
+            <span asp-validation-for="Titulo"></span>
+
+        </div><br />
+
+        <divclass ="form-group">
+            <label asp-for="Descricao">Descrição</label><br />
+
+            <textarea class="form-control" asp-for="Descricao" rows="5">
+            </textarea>
+
+            <span asp-validation-for="Descricao"></span>
+
+        </divclass><br />
+
+        <div>
+            <input id="btnEviar" type="submit" value="SALVAR" />
+        </div>
+
+    </form>
+
+</div>

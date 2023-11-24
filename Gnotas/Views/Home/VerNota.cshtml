@@ -1,0 +1,32 @@
+﻿@model NotaModel
+
+@{
+    ViewData["Title"] = "Ver nota";
+}
+
+<div id="areaConteudoDaDiv">
+
+    <h1>@Model.Titulo</h1> <hr />
+
+    <p>@Model.Descricao</p>
+
+   
+
+</div>
+
+
+<div id="areaDosBtn">
+    <div class="padraoBtn">
+        <a asp-action="Index"><b>VOLTA</b></a>
+    </div>
+
+    <div class="padraoBtn">
+        <a asp-action="Editar" asp-route-id="@Model.IdNota"><b>EDITAR</b></a>
+    </div>
+
+    <div class="apagarANota">
+        <a asp-action="Apagar" asp-route-id="@Model.IdNota"><b>APAGAR</b></a>
+    </div>
+
+</div>
+

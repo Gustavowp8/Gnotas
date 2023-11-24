@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+    <title>@ViewData["Title"] - Gage notas</title>
+</head>
+<body>
+
+    <header id="header">
+        <a id="logo" asp-action="Index" asp-controller="Home">G-notas</a>
+
+        <nav id="nav">
+            <ul id="menu">
+                <li><a asp-action="Index">Olá @User.Identity.Name </a></li>
+                <li><a asp-controller="account" asp-action="Logout">SAIR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="conteudoSite">
+
+        @RenderBody()
+
+    </div>
+
+</body>
+</html>

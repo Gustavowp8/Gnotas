@@ -1,0 +1,27 @@
+﻿@model IEnumerable<NotaModel>
+
+@{
+    ViewData["Title"] = "Tela inicial";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo</h1> <br />
+
+    <a asp-action="Adicionar" id="btn-padrao">Criar nova nota</a>
+</div> <br /> <hr />
+
+    <div class="cardUm">
+
+         @foreach (var nota in Model)
+        {
+             <div class="cardDois">
+
+                <h4>@nota.Titulo</h4>
+                <p>@(nota.Descricao.Length <= 20 ? nota.Descricao : nota.Descricao.Substring(0, 20))</p>
+                <a asp-action="VerNota" asp-route-id="@nota.IdNota"><b>VER NOTA</b></a>
+        
+            </div>
+        }
+    </div>
+
+

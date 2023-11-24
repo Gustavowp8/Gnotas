@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body, ul {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+a {
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+    a:hover {
+        background: rgba(0, 0, 0, 0.082);
+    }
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header {
+    box-sizing: border-box;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #36A5E2;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+}
+
+    #menu a {
+        display: block;
+        padding: .5rem;
+    }
+
+.conteudoSite {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#btn-padrao {
+    background: #36A5E2;
+    padding: .3rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.cardUm{
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardDois {
+    flex: 1 0 150px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid #36A5E2;
+    background: #D9D9D9;
+    padding: 5px;
+    text-align: center;
+}
+
+    .cardDois a {
+        color: #ffffff;
+        background: #36A5E2;
+        padding: 2px;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+
+#areaConteudoDaDiv {
+    padding: 10px;
+    top: 70px;
+    bottom: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#areaDosBtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+}
+
+#areaDosBtn a {
+    color: #ffffff;
+    /*background: #36A5E2;*/
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#btnEviar {
+    width: 100%;
+    background: #36A5E2;
+    padding: .5rem;
+    border: 1px solid #36A5E2;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.padraoBtn a {
+    background: #36A5E2;
+}
+
+.apagarANota a {
+    background: red;
+}
+
+#contaEntrar {
+    margin-top: 10%;
+    color: black;
+    width: 100%;
+    /*background: #36A5E2;*/
+    padding: .5rem;
+    border: 1px solid #36A5E2;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+}
