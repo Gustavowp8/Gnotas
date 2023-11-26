@@ -5,23 +5,38 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Bem-vindo</h1> <br />
+    <h1 class="display-4"><b>Gage</b> Notas</h1> <br />
 
     <a asp-action="Adicionar" id="btn-padrao">Criar nova nota</a>
 </div> <br /> <hr />
 
+<partial name="_Mensagem"></partial>
+
+@if (Model.Count() > 0)
+{
     <div class="cardUm">
 
-         @foreach (var nota in Model)
+        @foreach (var nota in Model)
         {
-             <div class="cardDois">
+            <div class="cardDois">
 
                 <h4>@nota.Titulo</h4>
                 <p>@(nota.Descricao.Length <= 20 ? nota.Descricao : nota.Descricao.Substring(0, 20))</p>
                 <a asp-action="VerNota" asp-route-id="@nota.IdNota"><b>VER NOTA</b></a>
-        
+
             </div>
         }
     </div>
+}
+else
+{
+
+    <div class="tNota">
+        <img src="/img/nota.png">
+        <p>
+            Não há notas
+        </p>
+    </div>
+}
 
 

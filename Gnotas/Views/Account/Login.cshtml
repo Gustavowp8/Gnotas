@@ -1,45 +1,67 @@
-﻿@model LoginViewModel
+﻿<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <title>@ViewData["Title"] - Gage notas</title>
+</head>
+
+@model LoginViewModel
 @{
     ViewData["Title"] = "Entrar com usuario";
+    Layout = null;
 }
 
-<div class="row">
 
-    <div class="col-md-12">
 
-        <form method="post">
+<div class="contLogin">
 
-            <div asp-validation-summary="All" class="alert-danger"></div>
+    <div class="areaImagem">
+        <img src="/img/Gage 1.png" />
+    </div>
 
-            <div class="form-group">
+    <div class="row">
 
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email"></span>
+        <div class="col-md-12">
 
-            </div>
+            <form method="post">
 
-            <div class="form-group">
+                <div asp-validation-summary="All" class="alert-danger"></div>
 
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password"></span>
+                <div class="form-group">
 
-            </div>
+                    <label asp-for="UserName"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName"></span>
 
-            <div class="checkbox">
+                </div><br />
 
-                <label asp-for="RememberMe"></label>
-                <input asp-for="RememberMe"/>
-                @Html.DisplayNameFor(m => m.RememberMe)
+                <div class="form-group">
 
-            </div>
+                    <label asp-for="Password">Senha</label>
+                    <input type="password" asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password"></span>
 
-            <button type="submit" id="btnEviar">Entrar</button>
+                </div><br />
 
-        </form>
+                <div class="checkbox">
 
-        <a asp-action="Register" id="contaEntrar">Criar conta</a>
+                    <input asp-for="RememberMe" />
+                    <b>@Html.DisplayNameFor(m => m.RememberMe)</b>
+
+                </div><br />
+
+                <button type="submit" id="btnEviar">Entrar</button>
+
+            </form>
+
+            <p>
+                <a asp-action="Register" class="contaUser">Criar conta</a>
+            </p>
+
+        </div>
 
     </div>
 

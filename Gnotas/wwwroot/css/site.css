@@ -139,3 +139,59 @@ a {
     color: #ffffff;
     margin-top: 20px;
 }
+
+.contLogin{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 15px;
+}
+
+.contLogin label{
+    font-weight: bold;
+}
+
+    .contLogin p{
+        text-align: center;
+    }
+
+    .areaImagem {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .contaUser {
+        color: black;
+        font-weight: bold;
+        margin: auto;
+    }
+
+.contLogin h3{
+    text-align: center;
+
+}
+
+.tNota{
+    text-align: center;
+}
+
+#mPerfil{
+    margin-top: 10%;
+}
+
+#mPerfil a {
+    color: blue;
+}
+
+#mPerfil img{
+    max-width: 200px;
+}
+
+.mAviso {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #36A5E2;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}

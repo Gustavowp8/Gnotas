@@ -16,8 +16,9 @@
 
         <nav id="nav">
             <ul id="menu">
-                <li><a asp-action="Index">Olá @User.Identity.Name </a></li>
+                <li><a asp-action="Privacy">Olá @User.Identity.Name </a></li>
                 <li><a asp-controller="account" asp-action="Logout">SAIR</a></li>
+
             </ul>
         </nav>
     </header>
@@ -27,6 +28,11 @@
         @RenderBody()
 
     </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>

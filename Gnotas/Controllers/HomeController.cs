@@ -1,10 +1,12 @@
 ﻿using Gnotas.Data;
 using Gnotas.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Packaging;
 using System.Diagnostics;
+
 
 namespace Gnotas.Controllers
 {
@@ -17,29 +19,34 @@ namespace Gnotas.Controllers
         {
             this.db = db;
         }
-        
-        public async Task<IActionResult> Index()
+
+        public IActionResult Index()
         {
-            return View(await db.Notas.OrderBy(x => x.Descricao).AsNoTracking().ToListAsync());
+            string usuario = User.Identity.GetUserId();
+            var notas = db.Notas.Where(n => n.ChaveUsuario == usuario).OrderBy(n => n.Descricao).ToList();
+            return View(notas);
         }
 
         public ActionResult Adicionar()
         {
             return View();
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Adicionar(NotaModel nota)
         {
             try
             {
+                nota.ChaveUsuario = User.Identity.GetUserId();
                 db.Notas.Add(nota);
                 db.SaveChanges();
+                TempData["mensagem"] = MensagemModel.Serializar("A nota foi adicionada");
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
+                TempData["mensagem"] = MensagemModel.Serializar("Erro ao excluir a nota", TipoMensagem.Erro);
                 return View();
             }
         }
@@ -84,10 +91,12 @@ namespace Gnotas.Controllers
 
                 //Salva
                 db.SaveChanges();
+                TempData["mensagem"] = MensagemModel.Serializar("A nota foi alterada");
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
+                TempData["mensagem"] = MensagemModel.Serializar("Erro ao tentar alterar a nota", TipoMensagem.Erro);
                 return RedirectToAction(nameof(Index));
             }
         }
@@ -97,6 +106,7 @@ namespace Gnotas.Controllers
         {
             db.Notas.Remove(db.Notas.Where(a => a.IdNota == id).FirstOrDefault());
             db.SaveChanges();
+            TempData["mensagem"] = MensagemModel.Serializar("A nota foi apagada", TipoMensagem.Erro);
             return RedirectToAction(nameof(Index));
         }
 

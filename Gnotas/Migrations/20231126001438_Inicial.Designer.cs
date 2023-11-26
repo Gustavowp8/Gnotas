@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gnotas.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231124152945_Identidade")]
-    partial class Identidade
+    [Migration("20231126001438_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,11 @@ namespace Gnotas.Migrations
                     b.Property<int>("IdNota")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("ChaveUsuario")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Descricao")
                         .IsRequired()

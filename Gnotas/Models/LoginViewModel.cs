@@ -5,8 +5,9 @@ namespace Gnotas.Models
     public class LoginViewModel
     {
         [Required(ErrorMessage = "E-mail e obrigatorio")]
-        [EmailAddress]
-        public string? Email { get; set; }
+        //[EmailAddress]
+        [Display(Name = "Nome")]
+        public string? UserName { get; set; }
 
         [Required(ErrorMessage = "Senha e obrigatorio")]
         public string? Password { get; set; }
